@@ -1,0 +1,79 @@
+.main {
+    background: $bg;
+    background-position: center;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+
+    .menu {
+        display: none;
+        width: 30px;
+        height: 2px;
+        background: $secondary;
+        margin: 20px;
+        position: relative;
+
+        &.open {
+            display: none;
+        }
+
+        &::before {
+            content:'';
+            @extend .menu;
+            position: absolute;
+            display: block;
+            top: -10px;
+            left: -20px;
+        }
+
+        &::after {
+            @extend .menu::before;
+            top: 0px;
+        }
+
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        margin: 30px 15px;
+        
+
+        .logo {
+            font-size: 25px;
+            color: $secondary;
+            font-weight: 800;
+            // letter-spacing: 2px;
+            text-transform: uppercase;
+
+            i {
+                margin: 5px;
+
+            }
+
+        }
+
+        .button {
+            button {
+                outline: none;
+                border: none;
+                font-size: 20px;
+                padding: 5px 10px;
+                border-radius: 5px;
+                background: $hover;
+                color: $bg;
+            }
+        }
+
+    }
+
+    @include responsive(1000px) {
+        width: 100vw;
+
+        .menu {
+            display: block;
+        }
+
+    }
+
+}

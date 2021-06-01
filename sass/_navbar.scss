@@ -1,0 +1,134 @@
+.nav-bar {
+    background: $primary;
+    transition: 0.3s;
+    font-size: 20px;
+    position: relative;
+    height: 100vh;
+    z-index: 20;
+
+    &.open {
+        transform: translateX(0);
+        width: 100vw;
+    }
+
+    .close {
+        display: none;
+    }
+
+    @include responsive(1000px) {
+        position: fixed;
+        height: 100vh;
+        font-size: 18px;
+        transform: translateX(-100%);
+
+        .close {
+            display: flex;
+            position: absolute;
+            bottom: 1em;
+            margin: 10px 5%;
+            width: 90%;
+            height: 50px;
+            color: $secondary;
+            border-radius: 5px;
+            justify-content: center;
+            align-items: center;
+
+            &:hover {
+                background: $bg;
+            }
+
+        }
+
+        
+
+    }
+
+   
+    ul {
+        list-style-type: none;
+        margin: 20px;
+
+        hr {
+            margin: 9px 0;
+            background-color: $bg;
+        }
+
+        li {
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.9em;
+            color: $secondary;
+            padding:5px;
+            border-radius: 5px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            position: relative;
+
+            i {
+                margin: 5px;
+
+                &.fa-star {color: map-get($special_colors, 'star' )}
+                &.fa-sun {color: map-get($special_colors, 'sun' )}
+                &.fa-calendar {color: map-get($special_colors, 'calendar' )}
+                &.fa-home, &.fa-user {color: map-get($special_colors, 'home' )}
+
+            }
+
+            &:hover {
+                background: $bg;
+            }
+
+            a {
+                color: $secondary;
+                text-decoration: none;
+
+            }
+
+            &:first-child {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                height: 100px;
+
+                .logo {
+                    width: 50px;
+                    height: 50px;
+                    background: #4b9adb;
+                    border-radius: 50%;
+                    display: grid;
+                    place-items: center;
+                    color: $secondary;
+                    font-weight: 300;
+                    font-size: 1em;
+                    margin-right: 10px;
+                }
+                span.email {
+                    color: $hover;
+                    font-size: 0.8em;
+                }
+
+            }
+
+            &:last-child {
+
+                display: grid;
+                align-items: center;
+                
+                * {
+                    color: $hover;
+                }
+
+                i.fa-folder {
+                    position: absolute;
+                    right: 1em;
+                    top: 0.5em;
+                }
+            }
+
+        }
+
+
+    }
+
+}

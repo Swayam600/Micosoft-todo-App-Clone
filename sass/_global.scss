@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+$primary: #363636;
+$secondary: #ebebeb;
+$bg: #4b4b4b;
+$hover: #b8b8b8;
+
+$green: hsl(150, 63%, 57%);
+$red: hsl(0, 58%, 60%);
+
+$special_colors: (
+    'sun': #7eeba2,
+    'star': #f09797,
+    'calendar': #bee0be,
+    'home': lightgreen
+);
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 7fr;
+    grid-template-rows: 100vh;
+
+    font-family: 'Poppins', sans-serif;
+}
+
+@mixin responsive($max-width) {
+    @media screen and (max-width: $max-width) {
+        @content
+    }
+}
+
+
+
+
+
+
+

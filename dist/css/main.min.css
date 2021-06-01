@@ -1,0 +1,341 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 7fr;
+      grid-template-columns: 1fr 7fr;
+  -ms-grid-rows: 100vh;
+      grid-template-rows: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav-bar {
+  background: #363636;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  font-size: 20px;
+  position: relative;
+  height: 100vh;
+  z-index: 20;
+}
+
+.nav-bar.open {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  width: 100vw;
+}
+
+.nav-bar .close {
+  display: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .nav-bar {
+    position: fixed;
+    height: 100vh;
+    font-size: 18px;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  .nav-bar .close {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    bottom: 1em;
+    margin: 10px 5%;
+    width: 90%;
+    height: 50px;
+    color: #ebebeb;
+    border-radius: 5px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .nav-bar .close:hover {
+    background: #4b4b4b;
+  }
+}
+
+.nav-bar ul {
+  list-style-type: none;
+  margin: 20px;
+}
+
+.nav-bar ul hr {
+  margin: 9px 0;
+  background-color: #4b4b4b;
+}
+
+.nav-bar ul li {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9em;
+  color: #ebebeb;
+  padding: 5px;
+  border-radius: 5px;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.nav-bar ul li i {
+  margin: 5px;
+}
+
+.nav-bar ul li i.fa-star {
+  color: #f09797;
+}
+
+.nav-bar ul li i.fa-sun {
+  color: #7eeba2;
+}
+
+.nav-bar ul li i.fa-calendar {
+  color: #bee0be;
+}
+
+.nav-bar ul li i.fa-home, .nav-bar ul li i.fa-user {
+  color: lightgreen;
+}
+
+.nav-bar ul li:hover {
+  background: #4b4b4b;
+}
+
+.nav-bar ul li a {
+  color: #ebebeb;
+  text-decoration: none;
+}
+
+.nav-bar ul li:first-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100px;
+}
+
+.nav-bar ul li:first-child .logo {
+  width: 50px;
+  height: 50px;
+  background: #4b9adb;
+  border-radius: 50%;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  color: #ebebeb;
+  font-weight: 300;
+  font-size: 1em;
+  margin-right: 10px;
+}
+
+.nav-bar ul li:first-child span.email {
+  color: #b8b8b8;
+  font-size: 0.8em;
+}
+
+.nav-bar ul li:last-child {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav-bar ul li:last-child * {
+  color: #b8b8b8;
+}
+
+.nav-bar ul li:last-child i.fa-folder {
+  position: absolute;
+  right: 1em;
+  top: 0.5em;
+}
+
+.main {
+  background: #4b4b4b;
+  background-position: center;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.main .menu, .main .menu::before, .main .menu::after {
+  display: none;
+  width: 30px;
+  height: 2px;
+  background: #ebebeb;
+  margin: 20px;
+  position: relative;
+}
+
+.main .menu.open, .main .open.menu::before, .main .open.menu::after {
+  display: none;
+}
+
+.main .menu::before, .main .menu::after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: -10px;
+  left: -20px;
+}
+
+.main .menu::after {
+  top: 0px;
+}
+
+.main .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 30px 15px;
+}
+
+.main .header .logo {
+  font-size: 25px;
+  color: #ebebeb;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.main .header .logo i {
+  margin: 5px;
+}
+
+.main .header .button button {
+  outline: none;
+  border: none;
+  font-size: 20px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: #b8b8b8;
+  color: #4b4b4b;
+}
+
+@media screen and (max-width: 1000px) {
+  .main {
+    width: 100vw;
+  }
+  .main .menu, .main .menu::before, .main .menu::after {
+    display: block;
+  }
+}
+
+.main .list {
+  width: 95%;
+  padding: 5px;
+  margin: 10px auto;
+}
+
+.main .list ul {
+  list-style-type: none;
+}
+
+.main .list ul li {
+  height: 50px;
+  border-radius: 5px;
+  width: 100%;
+  margin: 10px auto;
+  background: #363636;
+  padding: 14px;
+  color: #ebebeb;
+  font-size: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .list ul li .delete {
+  position: absolute;
+  right: 1em;
+  background: #d45e5e;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  color: #ebebeb;
+  cursor: pointer;
+}
+
+.main .list ul li .checkbox {
+  margin: 0 10px;
+  width: 20px;
+  height: 20px;
+  background: #ebebeb;
+  border-radius: 50%;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  cursor: pointer;
+  background: #d45e5e;
+}
+
+.main .list ul li .checkbox.checked {
+  background: #4cd691;
+}
+
+.main .form {
+  position: absolute;
+  bottom: 1em;
+  width: 90%;
+  margin: 0 5em;
+}
+
+@media screen and (max-width: 1000px) {
+  .main .form {
+    margin: 0 20px;
+  }
+}
+
+.main .form .input {
+  width: 80%;
+  height: 50px;
+  border-radius: 5px;
+  background: #363636;
+  color: #ebebeb;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  padding-left: 20px;
+}
+
+.main .form .add-button {
+  width: 50px;
+  height: 50px;
+  background: #363636;
+  color: #ebebeb;
+  font-size: 17px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  margin: 0 4px;
+}
+/*# sourceMappingURL=main.min.css.map */
