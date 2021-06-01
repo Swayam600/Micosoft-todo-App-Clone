@@ -13,15 +13,7 @@ closebutton.addEventListener('click', function() {
     menu.classList.remove('open')
 })
 
-// CHECKBOXES
 
-const checkboxes = document.querySelectorAll('.checkbox')
-
-checkboxes.forEach(checkbox => {
-    checkbox.addEventListener('click', () => {
-        checkbox.classList.toggle('checked')
-    })
-})
 
 
 // TODO ADD FUNCTIONALITY
@@ -35,6 +27,10 @@ addButton.addEventListener('click', () => {
 
     const checkBox = document.createElement('div')
     checkBox.classList.add('checkbox')
+
+    checkBox.addEventListener('click', function() {
+        checkBox.classList.toggle('checked')
+    })
 
     const span = document.createElement('span')
     span.innerText = input.value
