@@ -22,3 +22,13 @@ checkboxes.forEach(checkbox => {
         checkbox.classList.toggle('checked')
     })
 })
+
+// DELETE FUNCTIONALITY
+const deleteButtons = document.querySelectorAll('.delete')
+
+deleteButtons.forEach(deletebutton => {
+    deletebutton.addEventListener('click', () => {
+        const parent = deletebutton.parentElement
+        parent.remove()
+    })
+})
