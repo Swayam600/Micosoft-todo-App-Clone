@@ -28,7 +28,12 @@ body {
 .nav-bar.open {
   -webkit-transform: translateX(0);
           transform: translateX(0);
-  width: 100vw;
+}
+
+@media screen and (max-width: 500px) {
+  .nav-bar.open {
+    width: 100vw;
+  }
 }
 
 .nav-bar .close {
@@ -187,6 +192,10 @@ body {
   background: #ebebeb;
   margin: 20px;
   position: relative;
+}
+
+.main .menu:hover, .main .menu:hover::before, .main .menu:hover::after {
+  background: #b8b8b8;
 }
 
 .main .menu.open, .main .open.menu::before, .main .open.menu::after {

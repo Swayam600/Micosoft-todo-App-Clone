@@ -13,6 +13,10 @@
         margin: 20px;
         position: relative;
 
+        &:hover {
+            background: $hover;
+        }
+
         &.open {
             display: none;
         }

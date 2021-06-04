@@ -8,7 +8,11 @@
 
     &.open {
         transform: translateX(0);
-        width: 100vw;
+
+        @include responsive(500px) {
+            width: 100vw;
+        }
+
     }
 
     .close {
@@ -43,7 +47,7 @@
 
     }
 
-   
+
     ul {
         list-style-type: none;
         margin: 20px;
