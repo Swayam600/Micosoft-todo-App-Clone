@@ -5,6 +5,5 @@
 ## Features
 **This Web App Provides you with quite a features like**<br>
 
-- Data Persistence
 - Responsive for mobile and other devices
 - Provides an great User Experience
